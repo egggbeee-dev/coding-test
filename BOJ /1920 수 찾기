@@ -1,0 +1,11 @@
+n = int(input()) 
+nums = set(map(int, input().split()))  
+
+m = int(input()) 
+check_nums = list(map(int, input().split())) 
+
+for i in check_nums:
+    if i in nums:  
+        print(1)  
+    else:
+        print(0)
