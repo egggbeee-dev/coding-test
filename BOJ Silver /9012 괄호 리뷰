@@ -1,0 +1,30 @@
+# 괄호 문제 풀이
+
+## 1. 문제 해석
+
+- 정말 감을 못 잡았던 문제...
+- 처음에는 input으로 line들을 받아서 나누기 2해줘서 비교해야하나..? 생각했었을 정도
+- 그런데 스택으로 '(' 와 ')' 를 비교해주면서 계산할 수 있다는 것을 발견했다
+
+## 2. 문제 풀이
+
+```python
+t = int(input())
+
+for i in range(t):
+    stack = []
+    line = input()
+    for j in line:
+        if j == '(':
+            stack.append(j)
+        elif j == ')':
+            if stack:
+                stack.pop()
+            else:
+                print("NO")
+                break
+    else: 
+        if len(stack) == 0:
+            print("YES")
+        else:
+            print("NO")
